@@ -8,9 +8,10 @@ namespace Roar_Flight2
     {
 
         public PowerUp(ContentManager content)
-            : base(350, -20, new string[] { "PocionVelocidad", "PocionMovimiento", "PocionFuego"}, content)
+            : base(new System.Random().Next(600), new System.Random().Next(-5,0), 
+                  new string[] { "PocionVelocidad", "PocionMovimiento", "PocionFuego"}, content)
         {
-            SetVelocidad(120, 240);
+            SetVelocidad(120, 500);
         }
 
         public override void Mover(GameTime gameTime)

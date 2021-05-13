@@ -7,7 +7,7 @@ namespace Roar_Flight2
     class Enemigo : Sprite
     {
         public Enemigo(ContentManager content)
-            : base(350, -200, new string[] { "enemigo1_1", "enemigo1_2", "enemigo1_3" }, content)
+            : base(new System.Random().Next(600), new System.Random().Next(-200,0), new string[] { "enemigo1_1", "enemigo1_2", "enemigo1_3" }, content)
         {
             SetVelocidad(120,240);
         }
@@ -48,11 +48,11 @@ namespace Roar_Flight2
                 VelocY = new System.Random().Next(300, 700);
                 Activo = true;
 
-                //if (X > XJugador)
+                //if (VelocX > XJugador)
                 //{
                 //    X--;
                 //}
-                //if (X < X)
+                //if (VelocX < XJugador)
                 //{
                 //    X++;
                 //}

@@ -11,7 +11,7 @@ namespace Roar_Flight2
         public Fondo(ContentManager content, string nombre)
             : base(0, -1029, nombre, content)
         {
-            VelocY = 300;
+            VelocY = 400;
 
         }
 

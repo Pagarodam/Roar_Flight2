@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System;
+using System.Collections.Generic;
 
 namespace Roar_Flight2
 {
@@ -16,6 +18,7 @@ namespace Roar_Flight2
 
         private PowerUp pocionVelocidadY;
         private PowerUp pocionVelocidadX;
+        private PowerUp pocionFuego;
 
         private Enemigo enemigo;
         private Enemigo enemigo2;
@@ -32,6 +35,7 @@ namespace Roar_Flight2
         private SoundEffect hitEnemy2;
         private SoundEffect pocionY;
         private SoundEffect pocionX;
+        private SoundEffect pocionF;
 
 
 
@@ -41,10 +45,17 @@ namespace Roar_Flight2
         private int vidas;
         private int puntuacion;
         private int puntuacionPowerUps;
-
-
         public bool Terminado { get; set; }
         public bool Pasado { get; set; }
+
+        //-----------------------------------Pruebas
+
+
+        private List<Disparo> disparos;
+        private DateTime instanteUltimoDisparo;
+
+
+
 
         public PantallaDeJuego()
         {
@@ -53,8 +64,16 @@ namespace Roar_Flight2
             puntuacionPowerUps = 0;
             tiempoHastaSiguienteDisparo = new System.Random().Next(1000, 2000);
             contadorNiveles = 1;
-
+    
             Terminado = false;
+
+            //-----------------------------------Pruebas
+
+            disparos = new List<Disparo>();
+            instanteUltimoDisparo = DateTime.Now;
+
+
+
         }
 
         //------------------------------------------------------------- CARGAR CONTENIDOS
@@ -86,14 +105,15 @@ namespace Roar_Flight2
             //}
 
             player1 = new Player(Content);
-            disparo = new Disparo(Content);
             invencible = false;
             //contadorNiveles = 1;
 
             pocionVelocidadY = new PowerUp(Content);
             pocionVelocidadX = new PowerUp(Content);
+            pocionFuego = new PowerUp(Content);
             pocionVelocidadY.Activo = false;
             pocionVelocidadX.Activo = false;
+            pocionFuego.Activo = false;
 
 
             enemigo = new Enemigo(Content);
@@ -109,12 +129,19 @@ namespace Roar_Flight2
             hitEnemy1 = Content.Load<SoundEffect>("Enemigo1");
             hitEnemy2 = Content.Load<SoundEffect>("Enemigo2");
             pocionY = Content.Load<SoundEffect>("pocionVelocidadFondo");
-            pocionX = Content.Load<SoundEffect>("pocionVelocidadX");           
+            pocionX = Content.Load<SoundEffect>("pocionVelocidadX"); 
+            pocionF = Content.Load<SoundEffect>("pocionVelocidadX");
+
+            //-----------------------------------Pruebas
+
+
+            disparo = new Disparo(Content);
+            disparo.Activo = false;
         }
 
         //------------------------------------------------------------- ACTUALIZAR
 
-        public void Actualizar(GameTime gameTime)
+        public void Actualizar(GameTime gameTime, ContentManager Content)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
                 || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -122,9 +149,9 @@ namespace Roar_Flight2
 
             MoverElementos(gameTime);
             ComprobarColisiones();
-            ComprobarEntrada(gameTime);
+            ComprobarEntrada(gameTime, Content);
 
-            if (fondo.CiclosPantalla == 5)
+            if (fondo.CiclosPantalla == 20)
             {
                 contadorNiveles++;
                 fondo.CiclosPantalla = 0;
@@ -167,6 +194,7 @@ namespace Roar_Flight2
 
             pocionVelocidadY.Dibujar1(spriteBatch);
             pocionVelocidadX.Dibujar2(spriteBatch);
+            pocionFuego.Dibujar3(spriteBatch);
 
             //foreach (Enemigo enemigo in enemigos)
             //{
@@ -185,6 +213,12 @@ namespace Roar_Flight2
             disparo.Dibujar1(spriteBatch);
             disparoEnemigo.Dibujar2(spriteBatch);
 
+
+            for (int i = 0; i < disparos.Count; i++)
+            {
+                disparos[i].Dibujar1(spriteBatch);
+            }
+
         }
 
         //------------------------------------------------------------- MOVER ELEMENTOS
@@ -192,6 +226,8 @@ namespace Roar_Flight2
 
         protected void MoverElementos(GameTime gameTime)
         {
+
+            //----------------------------------------------------- MOVER POCIONES
 
             if (puntuacionPowerUps >= 3)
             {
@@ -301,6 +337,20 @@ namespace Roar_Flight2
             }
 
             fondo.Mover(gameTime);//Mirar esto
+
+
+
+            //-------------------------------------------PRUEBAS
+            //for (int i = 0; i < disparos.Count; i++)
+            //{
+            //    disparos[i].Y -= disparo.VelocY *
+            //        (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //    if (disparos[i].Y < 0)
+            //    {
+            //        disparos.RemoveAt(i);
+            //        i--;
+            //    }
+            //}
         }
 
         //----------------------------------------------------- COMPROBAR COLISIONES
@@ -313,6 +363,7 @@ namespace Roar_Flight2
                 enemigo.VelocY += 100;
                 pocionVelocidadY.Activo = false;
                 pocionVelocidadX.Activo = false;
+                pocionFuego.Activo = false;
                 puntuacionPowerUps = 0;
                 pocionY.CreateInstance().Play();
             }
@@ -322,6 +373,17 @@ namespace Roar_Flight2
                 player1.VelocX += 25;                
                 pocionVelocidadX.Activo = false;
                 pocionVelocidadY.Activo = false;
+                pocionFuego.Activo = false;
+                puntuacionPowerUps = 0;
+                pocionX.CreateInstance().Play();
+            }
+
+            if (pocionFuego.ColisionaCon(player1))
+            {
+                disparo.Activo = false;
+                pocionVelocidadX.Activo = false;
+                pocionVelocidadY.Activo = false;
+                pocionFuego.Activo = false; 
                 puntuacionPowerUps = 0;
                 pocionX.CreateInstance().Play();
             }
@@ -361,10 +423,21 @@ namespace Roar_Flight2
                 }
             }
 
-            if (player1.ColisionaCon(enemigo2) || player1.ColisionaCon(enemigo3))
+            if (player1.ColisionaCon(enemigo2))
             {
                 disparoEnemigo.Activo = false;        
                 EnemyClear(enemigo2);
+
+                PlayerClear();
+                if (vidas <= 0)
+                {
+                    Terminado = true;
+                }
+            }
+
+            if (player1.ColisionaCon(enemigo3))
+            {
+                disparoEnemigo.Activo = false;
                 EnemyClear(enemigo3);
                 PlayerClear();
                 if (vidas <= 0)
@@ -372,6 +445,7 @@ namespace Roar_Flight2
                     Terminado = true;
                 }
             }
+
 
             if (disparo.ColisionaCon(enemigo))
             {
@@ -393,7 +467,7 @@ namespace Roar_Flight2
 
         //------------------------------------------------------ COMPROBAR ENTRADA
 
-        protected void ComprobarEntrada(GameTime gameTime)
+        protected void ComprobarEntrada(GameTime gameTime, ContentManager Content)
         {
             var estadoTeclado = Keyboard.GetState();
             var estadoGamePad = GamePad.GetState(PlayerIndex.One);
@@ -423,18 +497,49 @@ namespace Roar_Flight2
                 disparo.Y = player1.Y + 17;
                 disparo.Activo = true;
                 sonidoDeDisparo.CreateInstance().Play();
+
+                //-----------------------------------Pruebas
+
+
+                /* Disparar(Content);*/// Borrar si da problemas ContentManger
+
+
             }
+        }
+
+
+        //-----------------------------------Pruebas
+        private void Disparar(ContentManager Content)
+        {
+            TimeSpan tiempoTranscurrido = DateTime.Now - instanteUltimoDisparo;
+            if (tiempoTranscurrido.TotalMilliseconds < 300)
+            {
+                return;
+            }
+
+
+            instanteUltimoDisparo = DateTime.Now;
+            if (disparos.Count<5)
+            {
+                Disparo d = new Disparo(Content);
+                disparos.Add(d);
+            }
+
+            //disparo.X = player1.X + 10;
+            //disparo.Y = player1.Y + 17;
+            //disparo.Activo = true;
+            //sonidoDeDisparo.CreateInstance().Play();
         }
 
         //------------------------------------------------------------- COSAS VARIAS
 
         //protected void PlayerHit(GameTime gameTime)
         //{
-            //for (int i = (int) player1.X; i< new System.Random().Next((int) player1.X +50); i++)
-            //{
-            //    player1.MoverDerecha(gameTime);
-            //}
-    //}
+        //for (int i = (int) player1.X; i< new System.Random().Next((int) player1.X +50); i++)
+        //{
+        //    player1.MoverDerecha(gameTime);
+        //}
+        //}
         protected void PlayerClear()
         {
             player1.X = 350;
@@ -462,7 +567,7 @@ namespace Roar_Flight2
         {
             puntuacion = 0;
             fondo = new Fondo(Content, "Stage2 continua");
-            fondo.VelocY = 300;
+            //fondo.VelocY = 300;
 
             disparoEnemigo.Activo = false;            
             puntuacionPowerUps = 0;

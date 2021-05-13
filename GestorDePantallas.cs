@@ -48,10 +48,10 @@ namespace Roar_Flight2
             switch (modoActual)
             {
                 case MODO.JUEGO: 
-                    juego.Actualizar(gameTime);                   
+                    juego.Actualizar(gameTime,Content);                   
                     break;
                 case MODO.JUEGO1:
-                    juego.Actualizar(gameTime);
+                    juego.Actualizar(gameTime,Content);
                     break;
                 case MODO.BIENVENIDA : 
                     bienvenida.Actualizar(gameTime);
@@ -125,11 +125,6 @@ namespace Roar_Flight2
 
             base.Draw(gameTime);
         }
-
-        //public virtual void CargarMusica(ContentManager Content)
-        //{
-        //    MediaPlayer.Stop();
-        //}
 
         public void Terminar()
         {
