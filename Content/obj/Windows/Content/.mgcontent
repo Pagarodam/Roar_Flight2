@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Arial1.spritefont</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Enemigo1.mp3</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/enemigo1_1.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/enemigo1_2.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/enemigo1_3.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Enemigo2.mp3</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Fire.mp3</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Fondo continuo.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/fuego.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/fuegoEnemigo.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Hit.mp3</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Moonlight3.mp3</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/player1_1.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/player1_2.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/player1_3.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/PocionFuego.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/PocionMovimiento.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/PocionVelocidad.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/pocionVelocidadFondo.mp3</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/pocionVelocidadX.mp3</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/pocionVelocidadY.mp3</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Stage1 continua.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Stage1_3.png</File>
+    <File>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Stage2 continua.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

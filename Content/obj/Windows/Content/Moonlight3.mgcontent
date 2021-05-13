@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Moonlight3.mp3</SourceFile>
+  <SourceTime>2021-04-28T20:11:22.538174+02:00</SourceTime>
+  <DestFile>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/bin/Windows/Content/Moonlight3.xnb</DestFile>
+  <DestTime>2021-05-10T09:10:22.2055143+02:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2020-08-10T16:17:54+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/bin/Windows/Content/Moonlight3.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>
