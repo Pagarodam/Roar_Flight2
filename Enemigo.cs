@@ -32,7 +32,7 @@ namespace Roar_Flight2
                 Y = 0;
                 VelocX = new System.Random().Next(-400, 400);
                 VelocY = new System.Random().Next(100, 500);
-                Activo = true;                
+                Activo = true;
             }
         }
 
@@ -48,14 +48,14 @@ namespace Roar_Flight2
                 VelocY = new System.Random().Next(300, 700);
                 Activo = true;
 
-                if (X > XJugador)
-                {
-                    X--;
-                }
-                if (X < X)
-                {
-                    X++;
-                }
+                //if (X > XJugador)
+                //{
+                //    X--;
+                //}
+                //if (X < X)
+                //{
+                //    X++;
+                //}
             }
         }
     }

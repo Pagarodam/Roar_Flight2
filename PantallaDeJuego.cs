@@ -23,8 +23,6 @@ namespace Roar_Flight2
         private DisparoEnemigo disparoEnemigo;
         private int tiempoHastaSiguienteDisparo;
 
-        //private Enemigo[] enemigos;
-
 
         private Fondo fondo;
 
@@ -38,7 +36,7 @@ namespace Roar_Flight2
 
 
         private SpriteFont fuente;
-        private Song musicaDeFondo;
+        //private Song musicaDeFondo;
 
         private int vidas;
         private int puntuacion;
@@ -63,11 +61,11 @@ namespace Roar_Flight2
 
         public void CargarContenidos(ContentManager Content)
         {
-            MediaPlayer.Volume = 0.5f;
-            musicaDeFondo = Content.Load<Song>("Moonlight3");
-            MediaPlayer.Play(musicaDeFondo);
-            MediaPlayer.Stop();
-            MediaPlayer.IsRepeating = true;
+            //MediaPlayer.Volume = 0.5f;
+            //musicaDeFondo = Content.Load<Song>("Moonlight3");
+            //MediaPlayer.Play(musicaDeFondo);
+            //MediaPlayer.Stop();
+            //MediaPlayer.IsRepeating = true;
 
             fuente = Content.Load<SpriteFont>("Arial1");
 
@@ -126,7 +124,7 @@ namespace Roar_Flight2
             ComprobarColisiones();
             ComprobarEntrada(gameTime);
 
-            if (fondo.CiclosPantalla == 1)
+            if (fondo.CiclosPantalla == 5)
             {
                 contadorNiveles++;
                 fondo.CiclosPantalla = 0;
@@ -224,19 +222,18 @@ namespace Roar_Flight2
                             puntuacionPowerUps = 0;
                             pocionVelocidadX.Activo = false;
                         }
-
                     }
                 }
             }
-
+            // -------------------------------- Movimiento Enemigos
             if (enemigo.Activo)
             {
                 enemigo.Mover(gameTime);
                 enemigo.MoverAbajo(gameTime);
             }
 
-            disparo.Mover(gameTime);
-            fondo.Mover(gameTime);
+            //disparo.Mover(gameTime);
+            //fondo.Mover(gameTime);
 
 
             if (disparoEnemigo.Activo)
@@ -263,38 +260,47 @@ namespace Roar_Flight2
 
             //PRUEBAS 
 
-            if (enemigo2.Activo || enemigo3.Activo)
+            if (enemigo2.Activo)
             {
-                enemigo3.Mover(gameTime);
-                enemigo3.MoverAbajo2(gameTime, player1.X);
                 enemigo2.Mover(gameTime);
                 enemigo2.MoverAbajo(gameTime);
             }
 
             disparo.Mover(gameTime);
+            //fondo.Mover(gameTime);//Mirar esto
+
+
+            //if (disparoEnemigo.Activo)
+            //{
+            //    disparoEnemigo.Mover(gameTime);
+
+            //    if (disparoEnemigo.Y > 1361)
+            //    {
+            //        disparoEnemigo.Activo = false;
+            //        tiempoHastaSiguienteDisparo = new System.Random().Next(2000);
+            //    }
+            //}
+            //else
+            //{
+            //    tiempoHastaSiguienteDisparo -= gameTime.ElapsedGameTime.Milliseconds;
+            //    if (tiempoHastaSiguienteDisparo <= 0)
+            //    {
+            //        disparoEnemigo.X = enemigo2.X;
+            //        disparoEnemigo.Y = enemigo2.Y + 17;
+            //        disparoEnemigo.Activo = true;
+            //    }
+            //}
+
+
+
+            if (enemigo3.Activo)
+            {
+                enemigo3.Mover(gameTime);
+                enemigo3.MoverAbajo2(gameTime, player1.X);
+              
+            }
+
             fondo.Mover(gameTime);//Mirar esto
-
-
-            if (disparoEnemigo.Activo)
-            {
-                disparoEnemigo.Mover(gameTime);
-
-                if (disparoEnemigo.Y > 1361)
-                {
-                    disparoEnemigo.Activo = false;
-                    tiempoHastaSiguienteDisparo = new System.Random().Next(2000);
-                }
-            }
-            else
-            {
-                tiempoHastaSiguienteDisparo -= gameTime.ElapsedGameTime.Milliseconds;
-                if (tiempoHastaSiguienteDisparo <= 0)
-                {
-                    disparoEnemigo.X = enemigo2.X;
-                    disparoEnemigo.Y = enemigo2.Y + 17;
-                    disparoEnemigo.Activo = true;
-                }
-            }
         }
 
         //----------------------------------------------------- COMPROBAR COLISIONES
@@ -452,18 +458,15 @@ namespace Roar_Flight2
             return puntuacion;
         }
 
-        public void Reset(ContentManager Content)
+        public void ResetNivel(ContentManager Content)
         {
-            PlayerClear();
-            EnemyClear(enemigo);
-            EnemyClear(enemigo2);
             puntuacion = 0;
-            fondo.VelocY = 300;
             fondo = new Fondo(Content, "Stage2 continua");
+            fondo.VelocY = 300;
 
             disparoEnemigo.Activo = false;            
             puntuacionPowerUps = 0;
-            vidas = 3;
+            Pasado = false;            
             fondo.CiclosPantalla = 0;
         }
     }

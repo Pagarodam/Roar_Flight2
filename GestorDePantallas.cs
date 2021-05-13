@@ -9,17 +9,14 @@ namespace Roar_Flight2
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+
         private PantallaDeBienvenida bienvenida;
         private PantallaDeJuego juego;
-
-
-        //private PantallaDeJuego2 juego1;
         private PantallaCreditos creditos;
-        //private Fondo fondo;
-        //private int ciclosPantalla;
 
         public enum MODO { BIENVENIDA, JUEGO, JUEGO1, FINPARTIDA};
         public MODO modoActual { get; set; }
+
 
         public GestorDePantallas()
         {
@@ -33,10 +30,7 @@ namespace Roar_Flight2
 
             bienvenida = new PantallaDeBienvenida(this);
             juego = new PantallaDeJuego();
-            //juego1 = new PantallaDeJuego2();
             creditos = new PantallaCreditos(this);
-            //fondo = new Fondo(Content);
-
 
             IsMouseVisible = false;
         }
@@ -45,7 +39,6 @@ namespace Roar_Flight2
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             bienvenida.CargarContenidos(Content);
-            //juego1.CargarContenidos(Content);
             juego.CargarContenidos(Content);
             creditos.CargarContenidos(Content,juego.GetPuntuacion());
         }
@@ -75,7 +68,7 @@ namespace Roar_Flight2
                 modoActual = MODO.FINPARTIDA;
                 juego.Terminado = false;
                 creditos.CargarContenidos(Content, juego.GetPuntuacion());
-                juego.Reset(Content);
+                juego.ResetNivel(Content);
             }
 
             if (juego.Pasado == true)
@@ -85,7 +78,8 @@ namespace Roar_Flight2
                 //modoActual = MODO.JUEGO1;
 
                 //juego.CargarContenidos(Content);
-                juego.Reset(Content);
+                juego.ResetNivel(Content);
+                
             }
 
             //posicionEnemigo.Y += 10; //TODO
