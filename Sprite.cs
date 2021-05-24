@@ -72,18 +72,29 @@ namespace Roar_Flight2
             }
         }
 
-        public bool ColisionaCon(Sprite otro)
+        public void RedimensionayDibuja(SpriteBatch spriteBatch) 
+        {
+            if (Activo)
+            {
+                spriteBatch.Draw(imagen,
+                    new Rectangle(
+                        (int)X, (int)Y,
+                        imagen.Width * 3, imagen.Height * 3),
+                        Color.White);
+            }
+        }
+    public bool ColisionaCon(Sprite otro)
         {
             if (!Activo) return false;
             if (!otro.Activo) return false;
             Rectangle r1 = new Rectangle(
                     (int)X, (int)Y,
-                    imagen.Width - 30, imagen.Height-30);
+                    imagen.Width - 20, imagen.Height-20);
 
 
             Rectangle r2 = new Rectangle(
                     (int)otro.X, (int)otro.Y,
-                    otro.imagen.Width -30, otro.imagen.Height- 30);
+                    otro.imagen.Width -20, otro.imagen.Height- 20);
 
             return r1.Intersects(r2);
         }

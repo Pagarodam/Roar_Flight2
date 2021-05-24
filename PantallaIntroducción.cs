@@ -23,7 +23,7 @@ namespace Roar_Flight2
         public void CargarContenidos(ContentManager Content)
         {
             fuente = Content.Load<SpriteFont>("Arial1");
-            fondoIntroduccion = new Fondo(Content, "Fondo Introduccion",-720 ,0);
+            fondoIntroduccion = new Fondo(Content, "Fondo Introduccion-mini-min",-720 ,0);
             dragon = new Sprite(200, 200, "Dragon Bienvenida", Content);
             //CargarMusica(Content);
 
@@ -51,7 +51,7 @@ namespace Roar_Flight2
 
         public void Dibujar(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            fondoIntroduccion.Dibujar(spriteBatch, Color.White);
+            fondoIntroduccion.RedimensionayDibuja(spriteBatch);
             dragon.Dibujar(spriteBatch, Color.White);
             spriteBatch.DrawString(fuente, "Pulsa enter para continuar", new Vector2(
                 200, 100), Color.DarkOrange);

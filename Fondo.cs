@@ -7,21 +7,17 @@ namespace Roar_Flight2
     {
         public int CiclosPantalla { get; set; }
 
-
         public Fondo(ContentManager content, string nombre)
             : base(0, -1029, nombre, content)
         {
             VelocY = 500;
-
         }
 
         public Fondo(ContentManager content, string nombre, int X, int Y)
             : base(X, Y, nombre, content)
         {
             VelocX = 200;
-
         }
-
 
         public override void Mover(GameTime gameTime)
         {
@@ -30,9 +26,9 @@ namespace Roar_Flight2
                 Y += VelocY *
                     (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-                if (Y >= -8) //-8
+                if (Y >= 0) //-8
                 {
-                    Y = -1029;
+                    Y = -1080;
                     CiclosPantalla++;
                 }
             }

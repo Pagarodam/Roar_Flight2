@@ -122,6 +122,7 @@ namespace Roar_Flight2
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            Matrix.CreateScale(2f);//escala
 
             switch (modoActual)
             {

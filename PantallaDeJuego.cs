@@ -27,18 +27,16 @@ namespace Roar_Flight2
         private int tiempoHastaSiguienteDisparo;
 
         //----------------------------------------- Pantallas
-        private Fondo fondo1;
-        private Fondo fondo2;
-        private Fondo fondo3;
-        //Fondo[] fondos;
+        private Fondo fondo;
 
+        //----------------------------------------- Sonido Efectos
         private SoundEffect sonidoDeDisparo;
         private SoundEffect hitPlayer;
         private SoundEffect hitEnemy1;
         private SoundEffect hitEnemy2;
         private SoundEffect pocionY;
         private SoundEffect pocionX;
-        private SoundEffect pocionF;
+        private SoundEffect pocionF; //MIRAR
 
         private SpriteFont fuente;
         private Song musicaDeFondo;
@@ -51,9 +49,9 @@ namespace Roar_Flight2
 
         ////-----------------------------------Pruebas
 
-        //private List<Disparo> disparos;
         private DateTime instanteUltimoDisparo;
         private DateTime ultimaVidaPerdida;
+        private int contadorNiveles;
 
         public PantallaDeJuego(GestorDePantallas gestor) //Prueba gestor
         {
@@ -67,6 +65,7 @@ namespace Roar_Flight2
             //-----------------------------------Pruebas
             instanteUltimoDisparo = DateTime.Now;
             ultimaVidaPerdida = DateTime.Now;
+            contadorNiveles = 1;
         }
 
         //------------------------------------------------------------- CARGAR CONTENIDOS
@@ -82,16 +81,38 @@ namespace Roar_Flight2
             fuente = Content.Load<SpriteFont>("Arial1");
 
             //fondo1 = new Fondo(Content, "Stage1 continua-min"); //cambio
-            fondo1 = new Fondo(Content, "Stage4 continua");
-            //fondo3 = new Fondo(Content, "Stage3 continua");
-
-            //fondos = new Fondo[3] { fondo1, fondo2, fondo3 };
 
             //------------------------------------------------------------ PRUEBA NIVELES
+            switch (contadorNiveles)
+            {
+                case 1: 
+                    fondo = new Fondo(Content, "Stage1");
+                    break;
+                case 2:
+                    fondo = new Fondo(Content, "Stage2");
+                    break;
+                case 3:
+                    fondo = new Fondo(Content, "Stage3");
+                    break;
+                case 4:
+                    fondo = new Fondo(Content, "Stage4");
+                    break;
+                default:
+                    break;
+            }
 
+            //----------------------------------------------------------- SPRITES 
             player1 = new Player(Content);
+            disparo = new Disparo(Content);
+            disparo.Activo = false;
             
-
+            enemigo = new Enemigo(Content);
+            enemigo2 = new Enemigo(Content);
+            enemigo3 = new Enemigo(Content);
+            enemigo3.SetVelocidad(0, 700);
+            enemigos = new Enemigo[3] { enemigo, enemigo2, enemigo3 };
+            disparoEnemigo = new DisparoEnemigo(Content);
+            
             pocionVelocidadY = new PowerUp(Content);
             pocionVelocidadX = new PowerUp(Content);
             pocionFuego = new PowerUp(Content);
@@ -99,13 +120,8 @@ namespace Roar_Flight2
             pocionVelocidadX.Activo = false;
             pocionFuego.Activo = false;
 
-            enemigo = new Enemigo(Content);
-            enemigo2 = new Enemigo(Content);
-            enemigo3 = new Enemigo(Content);
-            enemigo3.SetVelocidad(0, 700);
-            enemigos = new Enemigo[3] { enemigo, enemigo2, enemigo3 };
-            disparoEnemigo = new DisparoEnemigo(Content);
-
+            //----------------------------------------------------------- EFECTOS 
+            
             sonidoDeDisparo = Content.Load<SoundEffect>("Fire");
             hitPlayer = Content.Load<SoundEffect>("Hit");
             hitEnemy1 = Content.Load<SoundEffect>("Enemigo1");
@@ -113,10 +129,8 @@ namespace Roar_Flight2
             pocionY = Content.Load<SoundEffect>("pocionVelocidadFondo");
             pocionX = Content.Load<SoundEffect>("pocionVelocidadX");
             pocionF = Content.Load<SoundEffect>("pocionVelocidadX");
-
+          
             //-----------------------------------Pruebas
-            disparo = new Disparo(Content);
-            disparo.Activo = false;
         }
 
         //------------------------------------------------------------- ACTUALIZAR
@@ -131,9 +145,10 @@ namespace Roar_Flight2
             ComprobarColisiones();
             ComprobarEntrada(gameTime, Content);
 
-            if (fondo1.CiclosPantalla == 20)
+            if (fondo.CiclosPantalla == 10)
             {
-                fondo1.CiclosPantalla = 0;
+                contadorNiveles++;
+                fondo.CiclosPantalla = 0;
                 Pasado = true;
             }
 
@@ -163,7 +178,7 @@ namespace Roar_Flight2
 
         public void Dibujar(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            fondo1.Dibujar(spriteBatch, Color.White);
+            fondo.RedimensionayDibuja(spriteBatch);
 
             spriteBatch.DrawString(fuente, "Puntuacion :" + puntuacion,
                new Vector2(450, 0),
@@ -173,7 +188,7 @@ namespace Roar_Flight2
                 new Vector2(0, 0),
                 Color.Red);
 
-            spriteBatch.DrawString(fuente, "Ciclos :" + fondo1.CiclosPantalla,
+            spriteBatch.DrawString(fuente, "Ciclos :" + fondo.CiclosPantalla,
                 new Vector2(0, 200),
                 Color.Red);
 
@@ -202,11 +217,8 @@ namespace Roar_Flight2
         }
 
         //------------------------------------------------------------- MOVER ELEMENTOS
-
-
         protected void MoverElementos(GameTime gameTime)
         {
-
             //----------------------------------------------------- MOVER POCIONES
 
             if (pocionVelocidadY.Activo)
@@ -218,6 +230,7 @@ namespace Roar_Flight2
                     pocionVelocidadY.Activo = false;
                 }
             }
+
             if (pocionVelocidadX.Activo)
             {
                 pocionVelocidadX.Mover(gameTime);
@@ -227,6 +240,7 @@ namespace Roar_Flight2
                     pocionVelocidadX.Activo = false;
                 }
             }
+
             if (pocionFuego.Activo)
             {
                 pocionFuego.Mover(gameTime);
@@ -236,7 +250,9 @@ namespace Roar_Flight2
                     pocionFuego.Activo = false;
                 }
             }
+
             // -------------------------------- Movimiento Enemigos
+
             if (enemigo.Activo)
             {
                 enemigo.Mover(gameTime);
@@ -274,56 +290,27 @@ namespace Roar_Flight2
             }
 
             disparo.Mover(gameTime);
-            //fondo.Mover(gameTime);//Mirar esto
-
-
-            //if (disparoEnemigo.Activo)
-            //{
-            //    disparoEnemigo.Mover(gameTime);
-
-            //    if (disparoEnemigo.Y > 1361)
-            //    {
-            //        disparoEnemigo.Activo = false;
-            //        tiempoHastaSiguienteDisparo = new System.Random().Next(2000);
-            //    }
-            //}
-            //else
-            //{
-            //    tiempoHastaSiguienteDisparo -= gameTime.ElapsedGameTime.Milliseconds;
-            //    if (tiempoHastaSiguienteDisparo <= 0)
-            //    {
-            //        disparoEnemigo.X = enemigo2.X;
-            //        disparoEnemigo.Y = enemigo2.Y + 17;
-            //        disparoEnemigo.Activo = true;
-            //    }
-            //}
-
-
 
             if (enemigo3.Activo)
             {
                 enemigo3.Mover2(gameTime, player1.X); //Esto
-                enemigo3.MoverAbajo2(gameTime, player1.X);
-              
+                enemigo3.MoverAbajo2(gameTime, player1.X);            
             }
 
-            fondo1.Mover(gameTime);//Mirar esto
-
-
+            fondo.Mover(gameTime);
 
             //-------------------------------------------PRUEBAS
 
         }
 
         //----------------------------------------------------- COMPROBAR COLISIONES
-
         protected void ComprobarColisiones()
         {
             if (!invencible)
             {
                 if (pocionVelocidadY.ColisionaCon(player1))
                 {
-                    fondo1.VelocY = fondo1.VelocY + 100;
+                    fondo.VelocY = fondo.VelocY + 100;
                     enemigo.VelocY += 100;
                     pocionVelocidadY.Activo = false;
                     pocionVelocidadX.Activo = false;
@@ -358,9 +345,9 @@ namespace Roar_Flight2
                 if (disparoEnemigo.ColisionaCon(player1))
                 {               
                     disparoEnemigo.Activo = false;
-                    if (fondo1.VelocY>=200)
+                    if (fondo.VelocY>=200)
                     {
-                        fondo1.VelocY -= 50;
+                        fondo.VelocY -= 50;
                         hitPlayer.CreateInstance().Play();
 
                     }                
@@ -418,7 +405,7 @@ namespace Roar_Flight2
                     hitEnemy1.CreateInstance().Play();
                     puntuacion += 100;
                     puntuacionPowerUps++;
-                    EnemyClear(enemigo); //Cosas mias
+                    EnemyClear(enemigo); 
                 }
                 if (disparo.ColisionaCon(enemigo2) || disparo.ColisionaCon(enemigo3))
                 {

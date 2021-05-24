@@ -86,7 +86,7 @@
 /processorParam:Quality=Best
 /build:Fire.mp3
 
-#begin Fondo Introduccion.png
+#begin Fondo Introduccion-mini-min.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -96,7 +96,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Fondo Introduccion.png
+/build:Fondo Introduccion-mini-min.png
 
 #begin fuego.png
 /importer:TextureImporter
@@ -224,7 +224,7 @@
 /processorParam:Quality=Best
 /build:pocionVelocidadY.mp3
 
-#begin Stage1 continua-min.png
+#begin Stage1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -234,9 +234,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Stage1 continua-min.png
+/build:Stage1.png
 
-#begin Stage2 continua.png
+#begin Stage2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -246,9 +246,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Stage2 continua.png
+/build:Stage2.png
 
-#begin Stage3 continua.png
+#begin Stage3.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -258,9 +258,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Stage3 continua.png
+/build:Stage3.png
 
-#begin Stage4 continua.png
+#begin Stage4.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -270,5 +270,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Stage4 continua.png
+/build:Stage4.png
 

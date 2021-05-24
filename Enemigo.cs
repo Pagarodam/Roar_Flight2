@@ -37,7 +37,6 @@ namespace Roar_Flight2
             {
                 VelocX = VelocX * -1;
             }
-
         }
 
         public void MoverAbajo(GameTime gameTime)
@@ -64,9 +63,7 @@ namespace Roar_Flight2
                 Y = 0;
                 VelocX = new System.Random().Next(-120, 120);
                 VelocY = new System.Random().Next(900, 1000);
-                Activo = true;
-
-                
+                Activo = true;                
             }
         }
     }
