@@ -9,7 +9,7 @@ namespace Roar_Flight2
         public Enemigo(ContentManager content)
             : base(new System.Random().Next(600), new System.Random().Next(-200,0), new string[] { "enemigo1_1", "enemigo1_2", "enemigo1_3" }, content)
         {
-            SetVelocidad(120,240);
+            SetVelocidad(60,240 );
         }
 
         public override void Mover(GameTime gameTime)
@@ -22,6 +22,24 @@ namespace Roar_Flight2
                 || (X < 2))
                 VelocX = -1*VelocX;
         }
+
+        public void Mover2(GameTime gameTime , float XJugador)
+        {
+            base.Mover(gameTime);
+            X += VelocX *
+               (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (X > XJugador && VelocX > 0)
+            {
+                VelocX = VelocX * -1;
+            }
+            if (X < XJugador && VelocX < 0)
+            {
+                VelocX = VelocX * -1;
+            }
+
+        }
+
         public void MoverAbajo(GameTime gameTime)
         {
             Y += VelocY *
@@ -44,18 +62,11 @@ namespace Roar_Flight2
             {
                 X = new System.Random().Next(600);
                 Y = 0;
-                VelocX = new System.Random().Next(-400, 400);
-                VelocY = new System.Random().Next(300, 700);
+                VelocX = new System.Random().Next(-120, 120);
+                VelocY = new System.Random().Next(900, 1000);
                 Activo = true;
 
-                //if (VelocX > XJugador)
-                //{
-                //    X--;
-                //}
-                //if (VelocX < XJugador)
-                //{
-                //    X++;
-                //}
+                
             }
         }
     }

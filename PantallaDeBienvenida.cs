@@ -10,7 +10,6 @@ namespace Roar_Flight2
     {
         private SpriteFont fuente;
         private GestorDePantallas gestor;        
-        private Song musicaDeFondo;//Musica
 
         public PantallaDeBienvenida(GestorDePantallas gestor)
         {
@@ -19,31 +18,18 @@ namespace Roar_Flight2
 
         public void CargarContenidos(ContentManager Content)
         {
-            fuente = Content.Load<SpriteFont>("Arial1");
-            //CargarMusica(Content);
-            
+            fuente = Content.Load<SpriteFont>("Arial1");           
         }
 
-        //public void CargarMusica(ContentManager Content)
-        //{
-        //    MediaPlayer.Stop();
-        //    musicaDeFondo = Content.Load<Song>("PantallaBienvenida");
-        //    MediaPlayer.Play(musicaDeFondo);
-        //    MediaPlayer.Volume = 0.5f;
-        //}
         public void Actualizar(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.D1))
             {
-                gestor.modoActual = GestorDePantallas.MODO.JUEGO;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.D2))
-            {
-                //---
+                gestor.ChangeMode(GestorDePantallas.MODO.JUEGO);
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D3))
             {
-                //---
+                gestor.ChangeMode(GestorDePantallas.MODO.INTRODUCCION);
             }
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {

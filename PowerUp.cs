@@ -31,7 +31,7 @@ namespace Roar_Flight2
             if ((Y > 1040))
             {
                 X = new System.Random().Next(600);
-                Y = 100;
+                Y = 0;
                 VelocX = new System.Random().Next(-400, 400);
                 VelocY = new System.Random().Next(300, 600);
                 Activo = true;

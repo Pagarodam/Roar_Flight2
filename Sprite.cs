@@ -24,7 +24,6 @@ namespace Roar_Flight2
         bool haySecuencia;
        
 
-
         public Sprite(int x, int y, string nombreImagen, ContentManager Content)
         {
             X = x;
@@ -33,14 +32,6 @@ namespace Roar_Flight2
             Activo = true;
             haySecuencia = false;
         }
-
-        //public Sprite(int x, int y, ContentManager Content)
-        //{
-        //    X = x;
-        //    Y = y;
-        //    Activo = true;
-        //    haySecuencia = false;
-        //}
 
 
         public Sprite(int x, int y, string[] imagenes, ContentManager Content)
@@ -67,7 +58,9 @@ namespace Roar_Flight2
             VelocX = vx;
             VelocY = vy;
         }
-        public void Dibujar1(SpriteBatch spriteBatch)
+
+
+        public void Dibujar(SpriteBatch spriteBatch, Color color)
         {
             if (Activo)
             {
@@ -75,34 +68,9 @@ namespace Roar_Flight2
                     new Rectangle(
                         (int)X, (int)Y,
                         imagen.Width, imagen.Height),
-                        Color.White);
+                        color);
             }
         }
-        public void Dibujar2(SpriteBatch spriteBatch)
-        {
-            if (Activo)
-            {
-                spriteBatch.Draw(imagen,
-                    new Rectangle(
-                        (int)X, (int)Y,
-                        imagen.Width, imagen.Height),
-                        Color.Cyan);
-            }
-        }
-
-        public void Dibujar3(SpriteBatch spriteBatch)
-        {
-            if (Activo)
-            {
-                spriteBatch.Draw(imagen,
-                    new Rectangle(
-                        (int)X, (int)Y,
-                        imagen.Width, imagen.Height),
-                        Color.Red);
-            }
-        }
-
-
 
         public bool ColisionaCon(Sprite otro)
         {

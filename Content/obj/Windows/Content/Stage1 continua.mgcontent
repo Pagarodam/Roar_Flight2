@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Stage1 continua.png</SourceFile>
-  <SourceTime>2021-04-29T18:20:27.7811853+02:00</SourceTime>
+  <SourceFile>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/Stage1 continua-min.png</SourceFile>
+  <SourceTime>2021-05-18T20:28:24.1245471+02:00</SourceTime>
   <DestFile>C:/Users/Patrick/Dropbox/Estudio/1 Dam Patrick/Programación/Proyecto final Roar Flight/Roar_Flight2/Content/bin/Windows/Content/Stage1 continua.xnb</DestFile>
-  <DestTime>2021-05-10T09:10:24.8261093+02:00</DestTime>
+  <DestTime>2021-05-18T20:44:45.9512575+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -32,7 +32,7 @@ namespace Roar_Flight2
             if (Keyboard.GetState().IsKeyDown(Keys.Enter) || 
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
-                gestor.modoActual = GestorDePantallas.MODO.BIENVENIDA;
+                gestor.ChangeMode(GestorDePantallas.MODO.BIENVENIDA);
             }
         }
 

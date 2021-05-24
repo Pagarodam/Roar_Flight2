@@ -10,13 +10,13 @@ namespace Roar_Flight2
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
+        private PantallaIntroduccion introduccion;
         private PantallaDeBienvenida bienvenida;
         private PantallaDeJuego juego;
         private PantallaCreditos creditos;
+        private MODO modoActual;
 
-        public enum MODO { BIENVENIDA, JUEGO, JUEGO1, FINPARTIDA};
-        public MODO modoActual { get; set; }
-
+        public enum MODO { INTRODUCCION, BIENVENIDA, JUEGO, CREDITOS};
 
         public GestorDePantallas()
         {
@@ -28,8 +28,9 @@ namespace Roar_Flight2
 
             graphics.ApplyChanges();
 
+            introduccion = new PantallaIntroduccion(this);
             bienvenida = new PantallaDeBienvenida(this);
-            juego = new PantallaDeJuego();
+            juego = new PantallaDeJuego(this);
             creditos = new PantallaCreditos(this);
 
             IsMouseVisible = false;
@@ -38,25 +39,46 @@ namespace Roar_Flight2
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            bienvenida.CargarContenidos(Content);
-            juego.CargarContenidos(Content);
-            creditos.CargarContenidos(Content,juego.GetPuntuacion());
+
+            switch (modoActual)
+            {
+                case MODO.INTRODUCCION:
+                    introduccion.CargarContenidos(Content);
+                    break;
+                case MODO.BIENVENIDA:
+                    bienvenida.CargarContenidos(Content);
+                    break;
+                case MODO.JUEGO:
+                    juego.CargarContenidos(Content);
+                    break;
+                case MODO.CREDITOS:
+                    creditos.CargarContenidos(Content, juego.GetPuntuacion());
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void ChangeMode(MODO modo)
+        {
+            modoActual = modo;
+            LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
             switch (modoActual)
             {
-                case MODO.JUEGO: 
-                    juego.Actualizar(gameTime,Content);                   
+                case MODO.INTRODUCCION:
+                    introduccion.Actualizar(gameTime);
                     break;
-                case MODO.JUEGO1:
-                    juego.Actualizar(gameTime,Content);
-                    break;
-                case MODO.BIENVENIDA : 
+                case MODO.BIENVENIDA:
                     bienvenida.Actualizar(gameTime);
                     break;
-                case MODO.FINPARTIDA : 
+                case MODO.JUEGO: 
+                    juego.Actualizar(gameTime,Content);                   
+                    break;            
+                case MODO.CREDITOS : 
                     creditos.Actualizar(gameTime);                                    
                     break;
             }
@@ -65,21 +87,19 @@ namespace Roar_Flight2
             if (juego.Terminado == true)
             {
 
-                modoActual = MODO.FINPARTIDA;
+                ChangeMode(MODO.CREDITOS);
                 juego.Terminado = false;
                 creditos.CargarContenidos(Content, juego.GetPuntuacion());
-                juego.ResetNivel(Content);
             }
 
             if (juego.Pasado == true)
             {
-                //juego.Terminado = false;
+                juego.Pasado = false;
                 //juego1.Reset();
-                //modoActual = MODO.JUEGO1;
+                ChangeMode(MODO.CREDITOS);
 
-                //juego.CargarContenidos(Content);
-                juego.ResetNivel(Content);
-                
+                //juego.PasarNivel(Content);
+
             }
 
             //posicionEnemigo.Y += 10; //TODO
@@ -105,18 +125,16 @@ namespace Roar_Flight2
 
             switch (modoActual)
             {
+                case MODO.INTRODUCCION:
+                    introduccion.Dibujar(gameTime, spriteBatch);
+                    break;
+                case MODO.BIENVENIDA:
+                    bienvenida.Dibujar(gameTime, spriteBatch);
+                    break;
                 case MODO.JUEGO :
                     juego.Dibujar(gameTime, spriteBatch);
                     break;
-                case MODO.JUEGO1:
-                    juego.Dibujar(gameTime, spriteBatch);
-                    break;
-
-                case MODO.BIENVENIDA: 
-                    bienvenida.Dibujar(gameTime, spriteBatch);
-                    break;
-
-                case MODO.FINPARTIDA :
+                case MODO.CREDITOS :
                     creditos.Dibujar(gameTime, spriteBatch);
                     //juego.Reset();
                     break;

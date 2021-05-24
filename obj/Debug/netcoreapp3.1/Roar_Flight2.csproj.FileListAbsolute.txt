@@ -35,23 +35,17 @@ C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\obj\Debug\netcoreapp3.1\Roar_Flight2.pdb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\obj\Debug\netcoreapp3.1\Roar_Flight2.genruntimeconfig.cache
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\enemigo1_1.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\File.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\player1_1.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Fondo continuo.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Moonlight3.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Arial1.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Moonlight3.wma
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Fire.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\fuego.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\fuegoEnemigo.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage1_3.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage1 continua.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\enemigo1_2.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\enemigo1_3.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\player1_2.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\player1_3.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\PantallaBienvenida.wma
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\PantallaBienvenida.xnb
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\File.xnb
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Arial1.xnb
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\enemigo1_1.xnb
@@ -69,7 +63,6 @@ D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_F
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\player1_2.xnb
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\player1_3.xnb
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage1 continua.xnb
-D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage1_3.xnb
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Roar_Flight2.exe
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Roar_Flight2.deps.json
 D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Roar_Flight2.runtimeconfig.json
@@ -109,16 +102,34 @@ D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_F
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\PocionVelocidad.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\PocionFuego.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\PocionMovimiento.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Enemigo2.wma
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Enemigo2.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Hit.wma
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Hit.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadX.wma
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadX.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadY.wma
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadY.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Enemigo1.xnb
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Enemigo1.wma
-C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Fire.wma
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadFondo.xnb
 C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage2 continua.xnb
+C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage3 continua.xnb
+C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage4 continua.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Enemigo1.wma
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Enemigo2.wma
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Fire.wma
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Hit.wma
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadX.wma
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Enemigo1.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Enemigo2.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Hit.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\PocionFuego.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\PocionMovimiento.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\PocionVelocidad.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadFondo.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadX.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadY.wma
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\pocionVelocidadY.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage2 continua.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage3 continua.xnb
+D:\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage4 continua.xnb
+C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Stage1 continua-min.xnb
+C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Dragon Bienvenida.xnb
+C:\Users\Patrick\Dropbox\Estudio\1 Dam Patrick\Programación\Proyecto final Roar Flight\Roar_Flight2\bin\Debug\netcoreapp3.1\Content\Fondo Introduccion.xnb

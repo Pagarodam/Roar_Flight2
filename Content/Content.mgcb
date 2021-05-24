@@ -20,6 +20,18 @@
 /processorParam:TextureFormat=Compressed
 /build:Arial1.spritefont
 
+#begin Dragon Bienvenida.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Dragon Bienvenida.png
+
 #begin Enemigo1.mp3
 /importer:Mp3Importer
 /processor:SoundEffectProcessor
@@ -74,7 +86,7 @@
 /processorParam:Quality=Best
 /build:Fire.mp3
 
-#begin Fondo continuo.png
+#begin Fondo Introduccion.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -84,7 +96,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Fondo continuo.png
+/build:Fondo Introduccion.png
 
 #begin fuego.png
 /importer:TextureImporter
@@ -212,7 +224,7 @@
 /processorParam:Quality=Best
 /build:pocionVelocidadY.mp3
 
-#begin Stage1 continua.png
+#begin Stage1 continua-min.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -222,19 +234,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Stage1 continua.png
-
-#begin Stage1_3.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Stage1_3.png
+/build:Stage1 continua-min.png
 
 #begin Stage2 continua.png
 /importer:TextureImporter
@@ -247,4 +247,28 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Stage2 continua.png
+
+#begin Stage3 continua.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Stage3 continua.png
+
+#begin Stage4 continua.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Stage4 continua.png
 
